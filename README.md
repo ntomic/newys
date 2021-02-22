@@ -5,10 +5,12 @@
 - gradle 5+
 
 ## Running the application
-1. Localhost:   
+1. Gradle:  
+- import to IDE as gradle project 
+- gradle build
 - gradle bootRun    
-- standard SpringBoot application      
-2. Standalone Jar:    
+2. Standard SpringBoot application config     
+3. Standalone Jar:    
 - java -jar newys-1.0.0.jar   
   (location: /resources/jar/)
 
