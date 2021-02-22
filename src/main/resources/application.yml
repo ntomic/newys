@@ -1,0 +1,54 @@
+spring.profiles.active: dev
+
+spring.application.name: newys
+
+info.app.name: newys
+info.app.description: news related web application
+info.app.version: 1.0.0
+management.endpoints.web.base-path: /management
+management.endpoints.web.exposure.include: info, health
+management.endpoint.health.show-details: always
+
+logging:
+  file.name: logs/newys.log
+  level.root: info
+  logback.rollingpolicy.max-history: 30
+
+---
+
+spring.config.activate.on-profile: dev
+
+server.port: 8080
+
+spring.datasource.driverClassName: org.h2.Driver
+spring.datasource.url: jdbc:h2:file:./src/main/resources/testDB/testDB;AUTO_RECONNECT=TRUE;MODE=ORACLE
+spring.datasource.username: user
+spring.datasource.password: pass
+
+spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+spring.jpa.properties.hibernate.jdbc.batch_size: 10
+spring.jpa.properties.hibernate.generate_statistics: false
+spring.jpa.properties.hibernate.show_sql: false
+spring.jpa.hibernate.ddl-auto: none
+spring.datasource.initialization-mode: always
+
+spring.h2.console.enabled: true
+spring.h2.console.path: /h2
+
+spring.security.user.name: user
+spring.security.user.password: pass
+spring.security.user.roles: ROLE_USER
+
+---
+
+spring.config.activate.on-profile: prod
+
+spring.datasource.initialization-mode: never
+spring.jpa.hibernate.ddl-auto: none
+
+#spring.datasource.driverClassName:
+#spring.datasource.url:
+#spring.datasource.username:
+#spring.datasource.password:
+
+---

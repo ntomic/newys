@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org" >
+
+<head >
+	<meta charset = "utf-8" >
+	<meta http-equiv = "x-ua-compatible" content = "ie=edge" >
+	<title>Manage Article | NEWYS</title >
+	<meta name = "viewport" content = "width=device-width, initial-scale=1" >
+	<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+	<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.4.1/css/all.css" >
+</head >
+
+<body >
+<div class = "container my-5" >
+	<h3> <span th:text="${title}"></span> article</h3>
+	<div class = "card" >
+		<div class = "card-body" >
+			<div class = "col-md-10" >
+				<form action = "#" th:action = "@{/article/save}" th:object = "${article}" method = "post" >
+					<div class = "row" >
+
+						<div class = "form-group row col-md-12" >
+							<label for = "title" class = "col-md-2 col-form-label" >Title</label >
+							<input type = "text" th:field = "*{title}" class = "form-control col-md-10" id = "title" placeholder = "Title" />
+						</div >
+
+						<div class = "form-group row col-md-12" >
+							<label for = "author" class = "col-md-2 col-form-label" >Author</label >
+							<input type = "text" th:field = "*{author}" class = "form-control col-md-10" id = "author" placeholder = "Author" />
+						</div >
+
+						<div class = "form-group row col-md-12" >
+							<label for = "content" class = "col-md-2 col-form-label" >Content</label >
+							<input type = "text" th:field = "*{content}" class = "form-control col-md-10"
+							       id = "content" placeholder = "Content" />
+						</div >
+
+						<div class = "form-group row col-md-12" >
+							<input type = "submit" class = "btn btn-primary" value = " Submit " >
+							<a th:href = "@{/articles/}" class = "btn btn-primary " style = "position: absolute; right: 0;" th:text = "Cancel" > </a >
+						</div >
+
+						<input type = "hidden" id = "id" th:field = "*{articleID}" >
+
+					</div >
+				</form >
+			</div >
+		</div >
+	</div >
+</div >
+</body >
+
+</html >
