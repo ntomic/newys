@@ -1,6 +1,6 @@
 # NEWYS APP
 
-##Prerequisites
+## Prerequisites
 - Java 11+
 - gradle 5+
 
@@ -12,12 +12,12 @@
 - java -jar newys-1.0.0.jar   
   (location: /resources/jar/)
 
-##App Links
+## App Links
 http://localhost:8080/index  
 (Sign in with credentials : username= "user", password = "pass")   
 http://localhost:8080/articles   
 
-##Useful
+## Useful
 health check-up: http://localhost:8080/management/health   
 swagger: http://localhost:8080/swagger   
 database: http://localhost:8080/h2   
